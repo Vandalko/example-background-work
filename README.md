@@ -26,3 +26,13 @@ user to a corresponding Settings screen:
 **P.S.** privileged apps have access to the com.android.server.DeviceIdleController which also allows to
 whitelist application from power saving
 http://androidxref.com/9.0.0_r3/xref/frameworks/base/services/core/java/com/android/server/DeviceIdleController.java
+
+### Testing
+Application writes work output into logs
+![image](https://user-images.githubusercontent.com/1898060/124553870-f9c8f480-de3d-11eb-8d56-1e61c14fcd7d.png)
+
+Granting permissions on Xiaomi
+https://user-images.githubusercontent.com/1898060/124554356-8bd0fd00-de3e-11eb-856e-b19a8019af02.mp4
+
+
+
