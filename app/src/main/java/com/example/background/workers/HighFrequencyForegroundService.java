@@ -27,10 +27,9 @@ public class HighFrequencyForegroundService extends Service {
 
     private Timer timerTask = null;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
 
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             String channelId = "ExampleForegroundService";
             NotificationChannel channel = new NotificationChannel(channelId, "foreground-service", NotificationManager.IMPORTANCE_LOW);
@@ -44,10 +43,7 @@ public class HighFrequencyForegroundService extends Service {
                             .setContentTitle(getText(R.string.app_name))
                             .build());
         }
-    }
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
         if (timerTask != null) {
             timerTask.cancel();
             timerTask = null;
