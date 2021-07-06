@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Background Work</string>
+
+    <string name="autostart_xiaomi">
+        Autostart\n
+        1) Open \"Security\" and tap \"Permissions\"\n
+        2) Select \"Autostart\"\n
+        3) Find \"Background Work\" and turn on the switch\n
+        \n
+        Battery manager\n
+        1) Open \"Settings\"\n
+        2) Select \"Battery &amp; performance\"\n
+        3) Select \"Choose apps\"\n
+        4) Find \"Background Work\" and select \"No Restrictions\" in background settings\n
+        \n
+        Lock the app\n
+        1) Tap \"Menu\" button to enter \"Recents\" page
+        2) Select \"Background Work\" and lock it\n
+    </string>
+
+    <string name="autostart_other">
+        1) Lock \"Background Work\" in \"Recents\"\n
+        2) Allow \"Background Work\" to autostart in Security/Settings > Autostart\n
+        3) Add \"Background Work\" to exceptions\n
+        4) If you\'ve installed another startup manager, remove \"Background Work\" from its blocklist\n
+    </string>
+
+    <!-- TODO: add instructions for other brands -->
+</resources>
