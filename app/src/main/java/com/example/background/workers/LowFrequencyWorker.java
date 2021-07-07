@@ -3,6 +3,7 @@ package com.example.background.workers;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.pm.ServiceInfo;
 import android.os.Build;
 import android.util.Log;
 
@@ -41,6 +42,10 @@ public class LowFrequencyWorker extends Worker {
             }
 
             try {
+                int foregroundServiceType = 0;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    foregroundServiceType = ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC;
+                }
                 setForegroundAsync(new ForegroundInfo(
                         R.id.notification_foreground_worker,
                         new NotificationCompat.Builder(getApplicationContext(), channelId)
@@ -48,7 +53,7 @@ public class LowFrequencyWorker extends Worker {
                                 .setSmallIcon(android.R.drawable.ic_dialog_alert)
                                 .setContentTitle(getApplicationContext().getText(R.string.app_name))
                                 .build(),
-                        1 //ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC
+                        foregroundServiceType
                 )).get();
             } catch (Throwable t) {
                 Log.e("LowFrequencyWorker", "Failed to start foreground worker", t);
