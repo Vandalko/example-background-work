@@ -41,6 +41,7 @@ public class HighFrequencyForegroundService extends Service {
                             .setOnlyAlertOnce(true)
                             .setSmallIcon(android.R.drawable.ic_dialog_alert)
                             .setContentTitle(getText(R.string.app_name))
+                            .setOngoing(true)
                             .build());
         }
 
